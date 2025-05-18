@@ -4,16 +4,16 @@ ICON_DOT=$'\uf444'
 ICON_ARROW=$'\uf432'
 ICON_BLAME=$'\ue0c0'
 
-PROMPT="%{$fg[black]%}%(?:%{$bg_bold[green]%}%1{ ${ICON_LAMBDA}%}:%{$bg_bold[red]%}%1{ ${ICON_LAMBDA}%})%{$reset_color%}" # feature lambda icon
-PROMPT+="%(?:%{$fg[green]%}%1{${ICON_BLAME}%}:%{$fg[red]%}%1{${ICON_BLAME}%})%{$reset_color%} " # feature blame
-PROMPT+="%{$fg[cyan]%} %c%{$reset_color%}" # current directory
+# PROMPT="%{$fg[black]%}%(?:%{$bg_bold[green]%}%1{ ${ICON_LAMBDA}%}:%{$bg_bold[red]%}%1{ ${ICON_LAMBDA}%})%{$reset_color%}" # feature lambda icon
+PROMPT="%(?:%{$fg_bold[green]%}%1{${ICON_LAMBDA}%}:%{$fg_bold[red]%}%1{${ICON_LAMBDA}%})%{$reset_color%}" # feature blame
+PROMPT+="%{$fg_bold[cyan]%} %c%{$reset_color%}" # current directory
 PROMPT+='$(git_prompt_info)' # git prompt
-PROMPT+=" %{$fg[green]%}${ICON_ARROW}  " # arrow of code
+PROMPT+=" %{$fg_bold[green]%}$ %{$reset_color%}" # arrow of code
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[white]%} on ${ICON_BRANCH} %{$fg[yellow]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[white]%} on ${ICON_BRANCH} %{$fg_bold[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}%{$fg[red]%}%1{${ICON_DOT}%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg_bold[green]%}%{$fg_bold[red]%}%1{${ICON_DOT}%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[blue]%}"
 
 ICON_CALENDAR=$'\uf133'   # Ícone de calendário
 ICON_CLOCK=$'\uf017'  # Ícone de relógio
@@ -21,7 +21,7 @@ ICON_CPU=$'\ue266'    # Ícone de CPU
 ICON_RAM=$'\uefc5'    # Ícone de memória RAM
 ICON_FAN=$'\uefa7'    # Ícone de ventoinha
 
-# Funções auxiliares para obter métricas do sistema 
+# Funções auxiliares para obter métricas do sistema
 function cpu_percent() {
   echo $((100 - $(vmstat 1 2 | tail -1 | awk '{print $15}' | sed 's/%//')))
 }
