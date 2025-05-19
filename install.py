@@ -20,10 +20,30 @@ def remove_target_if_exists(target: Path) -> None:
 
 
 def create_symlink(target: Path, link_name: Path) -> None:
-    if target.is_dir():
-        link_name.symlink_to(target)
-    else:
-        sys.exit(1)
+    #: Checks if the path of `target` is a directory.
+    if not target.is_dir():
+        sys.exit(1) #: If not, finish the program with error.
+
+    #: Creates the destination directory (`link_name`) if it doesn't exist.
+    #:
+    #: With `parents=True` and `exist_ok=True, there will be no error
+    #: if it exists and it will create parent directories as needed
+    link_name.mkdir(parents=True, exist_ok=True)
+
+    #: For each entry (dir or file) in the target directory...
+    for entry in target.iterdir():
+        #: DDefines the absolute path where the symbolic link will be created.
+        dest: Path = link_name / entry.name
+        #: If there is already a file, directory or symlink with the same
+        #: name in the destination, it will be removed first.
+        if dest.exists() or dest.is_symlink():
+            if dest.is_symlink() or dest.is_file():
+                dest.unlink()
+            elif dest.is_dir():
+                shutil.rmtree(dest)
+
+        #: Creates a symlink pointing to the real path of the original item.
+        dest.symlink_to(entry.resolve())
 
 
 def setup() -> None:
@@ -42,7 +62,7 @@ def setup() -> None:
 
 def main() -> None:
     print(Fore.GREEN + "Initializing", end="", flush=True)
-    for i in range(3):
+    for _ in range(3):
         print(".", end="", flush=True)
         time.sleep(0.6)
     print("\n" + Fore.RESET)
