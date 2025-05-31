@@ -1,0 +1,21 @@
+[general]
+import = [
+  "~/.config/alacritty/themes/theme.toml"
+]
+
+[window]
+# dimensions = { columns = <integer>, lines = <integer> }
+# position = "None" | { x = <integer>, y = <integer> } # (has no effect on Wayland)
+padding = { x = 5, y = 5 }
+# dynamic_padding = true | false
+decorations = "Transparent"
+opacity = 0.8
+# blur = true | false # (works on macOS/KDE Wayland)
+# startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
+title = "Alacritty"
+# dynamic_title = true | false
+# class = { instance = "<string>", general = "<string>" } # (Linux/BSD only)
+# decorations_theme_variant = "Dark" | "Light" | "None"
+# resize_increments = true | false # (works on macOS/X11)
+# option_as_alt = "OnlyLeft" | "OnlyRight" | "Both" | "None" # (macOS only)
+level = "AlwaysOnTop"
