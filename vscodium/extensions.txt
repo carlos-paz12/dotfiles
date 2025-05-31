@@ -1,0 +1,10 @@
+antfu.icons-carbon
+castrogusttavo.symbols
+enkia.tokyo-night
+jdinhlife.gruvbox
+llvm-vs-code-extensions.vscode-clangd
+ms-vscode.cmake-tools
+twxs.cmake
+vadimcn.vscode-lldb
+xaver.clang-format
+zguolee.tabler-icons
