@@ -6,10 +6,10 @@ import = [
 [window]
 # dimensions = { columns = <integer>, lines = <integer> }
 # position = "None" | { x = <integer>, y = <integer> } # (has no effect on Wayland)
-padding = { x = 5, y = 5 }
+padding = { x = 10, y = 10 }
 # dynamic_padding = true | false
-decorations = "Transparent"
-opacity = 0.8
+# decorations = "Transparent"
+# opacity = 0.8
 # blur = true | false # (works on macOS/KDE Wayland)
 # startup_mode = "Windowed" | "Maximized" | "Fullscreen" | "SimpleFullscreen"
 title = "Alacritty"
@@ -19,3 +19,7 @@ title = "Alacritty"
 # resize_increments = true | false # (works on macOS/X11)
 # option_as_alt = "OnlyLeft" | "OnlyRight" | "Both" | "None" # (macOS only)
 level = "AlwaysOnTop"
+
+[font]
+normal = {family = "FiraCode Nerd Font", style = "Regular"}
+size = 11.0
