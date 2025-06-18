@@ -148,6 +148,7 @@
         "*.hpp": "cpp",
         "*.h": "cpp"
     },
+    "files.autoSave": "afterDelay",
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -190,13 +191,13 @@
     "workbench.editor.limit.enabled": true,
     "workbench.editor.limit.perEditorGroup": true,
     "workbench.editor.limit.value": 5,
-    "workbench.iconTheme": "symbols",
+    "workbench.iconTheme": "material-icon-theme",
     "workbench.layoutControl.enabled": false,
     "workbench.list.smoothScrolling": false,
+    "workbench.productIconTheme": "Tabler",
     "workbench.startupEditor": "none",
     "workbench.tree.indent": 16,
     "[cpp]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
-    "workbench.productIconTheme": "Tabler",
 }

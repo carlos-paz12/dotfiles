@@ -1,9 +1,10 @@
-antfu.icons-carbon
-castrogusttavo.symbols
-enkia.tokyo-night
+ardonplay.vscode-jetbrains-icon-theme
 jdinhlife.gruvbox
 llvm-vs-code-extensions.vscode-clangd
 ms-vscode.cmake-tools
+pkief.material-icon-theme
+rust-lang.rust-analyzer
+tomoki1207.pdf
 twxs.cmake
 vadimcn.vscode-lldb
 xaver.clang-format
